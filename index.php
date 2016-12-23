@@ -17,10 +17,11 @@ if (!$db_selected) {
     die('Can\'t use foo : '.mysql_error());
 }
 
-$sql = 'SELECT *
+$sql = 'SELECT u.users_id, u.first_name, u.last_name, GROUP_CONCAT(t.name SEPARATOR ",") AS tms
 FROM users u
 inner join teams_users tu on tu.user_id=u.users_id
-inner join teams t on t.teams_id=tu.team_id';
+inner join teams t on t.teams_id=tu.team_id
+GROUP BY u.users_id';
 $users = mysqli_query($conn, $sql);
 while ($row = mysqli_fetch_assoc($users)) {
   print_r($row);
