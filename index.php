@@ -16,6 +16,16 @@ $db_selected = mysqli_select_db($conn, 'test');
 if (!$db_selected) {
     die('Can\'t use foo : '.mysql_error());
 }
+
+$sql = 'SELECT *
+FROM users u
+inner join teams_users tu on tu.user_id=u.users_id
+inner join teams t on t.teams_id=tu.team_id';
+$users = mysqli_query($conn, $sql);
+while ($row = mysqli_fetch_assoc($users)) {
+  print_r($row);
+
+}
 ?>
 <!DOCTYPE html>
 <html>
