@@ -28,11 +28,12 @@ $users = mysqli_query($conn, $sql);
 <html>
   <head>
     <meta charset="utf-8">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
     <title>Users and Teams</title>
   </head>
-  <body>
+  <body style="padding: 36px;">
     <h1>Users and Teams</h1>
-    <table>
+    <table class="table table-striped table-bordered table-condensed table-hover" style="width: 760px;">
       <thead>
         <tr>
           <td> User ID: </td>
